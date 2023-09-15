@@ -1,0 +1,21 @@
+{
+  "name": "project_8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass scss:assets/css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanluc1200/F8_Project_08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanluc1200/F8_Project_08/issues"
+  },
+  "homepage": "https://github.com/tanluc1200/F8_Project_08#readme"
+}
