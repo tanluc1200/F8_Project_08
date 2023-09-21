@@ -1,0 +1,27 @@
+@use "../abstracts" as abs;
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+    @include abs.breakpoint(lg) {
+        column-gap: 10px;
+        margin-left: 39px;
+    }
+    @include abs.breakpoint(md) {
+        margin-left: auto;
+    }
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 145.455%;
+        @include abs.breakpoint(lg) {
+            font-size: 1.8rem;
+        }
+    }
+    &__img {
+        @include abs.breakpoint(lg) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
