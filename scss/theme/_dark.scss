@@ -1,10 +1,21 @@
+@use "../abstracts" as abs;
 html.dark {
     --text-color: #fff;
     --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7485%) hue-rotate(263deg) brightness(96%)
         contrast(103%);
     --header-bg-color: #171c28;
     --top-act-group-color: #292e39;
-    --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
     --top-act-separate-color: #ededf6;
     --body-bg: #292e39;
+    @include abs.breakpoint(lg) {
+        --top-act-group-shadow-color: rgba(0, 0, 0, 0.2);
+    }
+    /** Dropdown */
+    --dropdown-bg-color: #2f3441;
+    --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
+    --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(5%) saturate(3008%) hue-rotate(186deg)
+        brightness(88%) contrast(85%);
+    --top-menu-border-color: #171c28;
+    --menu-column-icon-color: brightness(0) saturate(100%) invert(97%) sepia(6%) saturate(716%) hue-rotate(253deg)
+        brightness(105%) contrast(96%);
 }

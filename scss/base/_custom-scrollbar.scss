@@ -1,0 +1,17 @@
+/* Tùy chỉnh thanh cuộn chung */
+::-webkit-scrollbar {
+    width: 5px; /* Độ rộng của thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Màu nền của phần track (phần bên dưới thanh cuộn) */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Màu nền của thanh cuộn */
+    border-radius: 999px; /* Độ cong của thanh cuộn */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa; /* Màu nền của thanh cuộn khi hover */
+}
