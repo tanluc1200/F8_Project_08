@@ -141,9 +141,6 @@
     &__column {
         .menu-column + .menu-column {
             margin-top: 23px;
-            @include abs.breakpoint(lg) {
-                // margin-top: 30px;
-            }
         }
     }
     &--not-main {
@@ -153,5 +150,9 @@
         grid-template-columns: repeat(4, 1fr);
         height: calc(min(582px, 100vh - 158px) - 60px);
         padding-left: unset;
+        @include abs.breakpoint(lg) {
+            grid-template-columns: 1fr;
+            height: auto;
+        }
     }
 }

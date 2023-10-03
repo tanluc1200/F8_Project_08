@@ -1722,5 +1722,11 @@ html {
   height: calc(min(582px, 100vh - 158px) - 60px);
   padding-left: unset;
 }
+@media (max-width: 991.98px) {
+  .sub-menu--not-main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
