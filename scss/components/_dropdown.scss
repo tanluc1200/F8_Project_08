@@ -102,4 +102,12 @@
             margin-top: 23px;
         }
     }
+    &--not-main {
+        position: unset;
+        inset: unset;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        height: calc(min(582px, 100vh - 158px) - 60px);
+        padding-left: unset;
+    }
 }

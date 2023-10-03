@@ -190,6 +190,15 @@ input {
   filter: var(--icon-color);
 }
 
+a,
+button,
+input,
+textarea,
+select,
+img {
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
 .row > *, .container-fluid, .container {
   padding-left: calc(var(--grid-gutter-x) * 0.5);
   padding-right: calc(var(--grid-gutter-x) * 0.5);
@@ -1221,6 +1230,92 @@ input {
     --grid-gutter-y: 90px;
   }
 }
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.d-grid {
+  display: grid !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+@media (max-width: 1399.98px) {
+  .d-xxl-block {
+    display: block !important;
+  }
+  .d-xxl-flex {
+    display: flex !important;
+  }
+  .d-xxl-grid {
+    display: grid !important;
+  }
+  .d-xxl-none {
+    display: none !important;
+  }
+}
+@media (max-width: 1199.98px) {
+  .d-xl-block {
+    display: block !important;
+  }
+  .d-xl-flex {
+    display: flex !important;
+  }
+  .d-xl-grid {
+    display: grid !important;
+  }
+  .d-xl-none {
+    display: none !important;
+  }
+}
+@media (max-width: 991.98px) {
+  .d-lg-block {
+    display: block !important;
+  }
+  .d-lg-flex {
+    display: flex !important;
+  }
+  .d-lg-grid {
+    display: grid !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-flex {
+    display: flex !important;
+  }
+  .d-md-grid {
+    display: grid !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+@media (max-width: 575.98px) {
+  .d-sm-block {
+    display: block !important;
+  }
+  .d-sm-flex {
+    display: flex !important;
+  }
+  .d-sm-grid {
+    display: grid !important;
+  }
+  .d-sm-none {
+    display: none !important;
+  }
+}
 html.dark {
   --text-color: #fff;
   --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7485%) hue-rotate(263deg) brightness(96%)
@@ -1293,14 +1388,6 @@ html {
 .top-bar {
   position: relative;
 }
-.top-bar__more {
-  display: none;
-}
-@media (max-width: 991.98px) {
-  .top-bar__more {
-    display: block;
-  }
-}
 
 .navbar {
   margin-left: 129px;
@@ -1312,11 +1399,60 @@ html {
 }
 @media (max-width: 991.98px) {
   .navbar {
-    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    transform: translateX(-100%);
+    background-color: var(--top-act-group-color);
+    padding-block: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .navbar.show {
+    transform: translateX(0);
+  }
+  .navbar.show ~ .navbar__overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility, opacity 0.3s ease-in-out;
+}
+@media (max-width: 991.98px) {
+  .navbar__overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+  }
+}
+.navbar__close-btn {
+  display: none;
+}
+@media (max-width: 991.98px) {
+  .navbar__close-btn {
+    display: block;
+    padding: 10px 40px;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar__list {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 .navbar__item:hover .dropdown {
   display: block;
+}
+@media (max-width: 991.98px) {
+  .navbar__item {
+    width: 100%;
+  }
 }
 .navbar__link {
   column-gap: 8.5px;
@@ -1325,6 +1461,14 @@ html {
   line-height: 146.667%;
   height: 50px;
   padding-inline: 15px;
+}
+@media (max-width: 991.98px) {
+  .navbar__link {
+    padding-inline: 40px;
+    font-size: 1.6rem;
+    line-height: 150%;
+    justify-content: space-between;
+  }
 }
 .navbar__arrow {
   margin-top: 5px;
@@ -1349,11 +1493,6 @@ html {
     display: none;
   }
 }
-@media (max-width: 767.98px) {
-  .top-act__group {
-    display: none;
-  }
-}
 .top-act__btn {
   flex: 1;
   height: 100%;
@@ -1373,6 +1512,7 @@ html {
 }
 .top-act__user {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
 }
 .top-act__avatar {
   width: 50px;
@@ -1518,6 +1658,14 @@ html {
 }
 .sub-menu__column .menu-column + .menu-column {
   margin-top: 23px;
+}
+.sub-menu--not-main {
+  position: unset;
+  inset: unset;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: calc(min(582px, 100vh - 158px) - 60px);
+  padding-left: unset;
 }
 
 /*# sourceMappingURL=main.css.map */

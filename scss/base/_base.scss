@@ -30,3 +30,11 @@ input {
 .icon {
     filter: var(--icon-color);
 }
+a,
+button,
+input,
+textarea,
+select,
+img {
+    -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
