@@ -5,9 +5,13 @@
     left: 0;
     width: min(1240px, 100%);
     display: none;
+    @include abs.breakpoint(lg) {
+        display: block;
+        position: initial;
+        padding-top: 0;
+    }
     &__inner {
         position: relative;
-        // padding: 30px 62px 30px 30px;
         padding: 30px;
         border-radius: 20px;
         background: var(--dropdown-bg-color);
@@ -21,6 +25,15 @@
             filter: var(--dropdown-arrow-color);
             z-index: 999;
         }
+        @include abs.breakpoint(lg) {
+            border-radius: unset;
+            box-shadow: unset;
+            background-color: transparent;
+            padding: 0 40px;
+            &::before {
+                content: none;
+            }
+        }
     }
 }
 .top-menu {
@@ -31,11 +44,21 @@
         width: var(--main-column-width);
         border-right: 1px solid #d2d1d6;
         overflow-y: auto;
+        @include abs.breakpoint(lg) {
+            width: 100%;
+            height: auto;
+            border-right: unset;
+        }
     }
 }
 .menu-column {
     display: flex;
     column-gap: 14px;
+    @include abs.breakpoint(lg) {
+        &:first-child {
+            padding-top: 14px;
+        }
+    }
     &__icon {
         position: relative;
         width: 36px;
@@ -43,6 +66,9 @@
         flex-shrink: 0;
         @include abs.breakpoint(xl) {
             display: none;
+        }
+        @include abs.breakpoint(lg) {
+            display: block;
         }
         &-1 {
             width: 30px;
@@ -63,6 +89,10 @@
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 1.5;
+        @include abs.breakpoint(lg) {
+            display: inline-block;
+            margin-bottom: 26px;
+        }
     }
     &__content {
         flex: 1;
@@ -70,6 +100,9 @@
     }
     &__list {
         margin-top: 19px;
+        @include abs.breakpoint(lg) {
+            margin-top: 0;
+        }
     }
     &__item {
         padding-right: 30px;
@@ -87,6 +120,10 @@
         display: inline-block;
         padding-block: 7px;
         line-height: 142.857%;
+        font-size: 1.4rem;
+        @include abs.breakpoint(lg) {
+            // padding-bottom: 21px;
+        }
     }
 }
 .sub-menu {
@@ -95,11 +132,18 @@
     inset: 0 0 0 var(--main-column-width);
     padding-left: 30px;
     grid-template-columns: repeat(3, 1fr);
-    // column-gap: 30px;
     overflow-y: auto;
+    @include abs.breakpoint(lg) {
+        position: unset;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
     &__column {
         .menu-column + .menu-column {
             margin-top: 23px;
+            @include abs.breakpoint(lg) {
+                // margin-top: 30px;
+            }
         }
     }
     &--not-main {
